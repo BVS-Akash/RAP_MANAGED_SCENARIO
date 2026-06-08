@@ -7,7 +7,7 @@ define view entity zaka_I_booksuppl
 
   association        to parent zaka_i_booking as _Booking        on  $projection.TravelId  = _Booking.TravelId
                                                                  and $projection.BookingId = _Booking.BookingId
-
+  association [1..1] to zaka_i_travel         as _Travel         on  $projection.TravelId = _Travel.TravelId
   association [1..1] to /DMO/I_Supplement     as _Supplement     on  $projection.SupplementId = _Supplement.SupplementID
   association [1..*] to /DMO/I_SupplementText as _SupplementText on  $projection.SupplementId = _SupplementText.SupplementID
 {
@@ -23,6 +23,7 @@ define view entity zaka_I_booksuppl
       // -> Associations
       _Booking,
       _Supplement,
-      _SupplementText
+      _SupplementText,
+      _Travel
 
 }

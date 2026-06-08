@@ -1,0 +1,6 @@
+@EndUserText.label: 'Travel App Processor'
+define service Zaka_sd_travel {
+  expose zaka_c_travel;
+  expose zaka_c_booking;
+  expose zaka_c_booksuppl;
+}
